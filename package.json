@@ -1,0 +1,52 @@
+{
+  "name": "mobium",
+  "version": "0.1.0",
+  "description": "Mobile-first MCP server for Appium/WebdriverIO automation.",
+  "author": "QASCRIPT",
+  "type": "module",
+  "bin": {
+    "mobium": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "SECURITY.md",
+    "plan.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "dev": "node --import tsx src/cli.ts",
+    "doctor": "node --import tsx src/cli.ts doctor",
+    "devices": "node --import tsx src/cli.ts devices",
+    "config": "node --import tsx src/cli.ts config",
+    "mcp-config": "node --import tsx src/cli.ts mcp-config",
+    "start-session": "node --import tsx src/cli.ts start-session",
+    "app": "node --import tsx src/cli.ts app",
+    "device-state": "node --import tsx src/cli.ts device-state",
+    "permissions": "node --import tsx src/cli.ts permissions",
+    "inspect": "node --import tsx src/cli.ts inspect",
+    "interact": "node --import tsx src/cli.ts interact",
+    "bdd": "node --import tsx src/cli.ts bdd",
+    "mcp": "node --import tsx src/cli.ts mcp",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "release:check": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "appium": "^3.3.1",
+    "appium-uiautomator2-driver": "^7.1.2",
+    "fast-xml-parser": "^5.7.2",
+    "webdriverio": "^9.27.1",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.15"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
